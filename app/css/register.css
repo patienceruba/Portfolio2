@@ -1,0 +1,115 @@
+.pageContainer {
+  max-width: 400px;
+  margin: 1.5rem auto;  /* reduced top/bottom margin */
+  padding: 0.75rem;     /* reduced padding */
+  font-family: sans-serif;
+  background: #fafafa;
+  margin-top: 100px;
+}
+
+.card {
+  background: #fff;
+  padding: 1rem;        /* reduced padding */
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cardHeader {
+  text-align: center;
+  margin-bottom: 0.75rem; /* reduced margin */
+}
+
+.cardTitle {
+  font-size: 1.4rem;   /* slightly smaller font */
+  margin-bottom: 0.15rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.cardSubtitle {
+  font-size: 0.85rem;  /* smaller font */
+  color: #555;
+  margin-bottom: 0;    /* remove extra space */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-top: 0.5rem;   /* smaller margin */
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.input {
+  padding: 0.4rem 0.6rem; 
+  font-size: 0.9rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+  margin-top: 10px;
+  border-radius: 0;
+  width: 99%;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #0a0a0e;
+}
+
+.inputError {
+  border-color: #e74c3c;
+  background: #fee6e6;
+}
+
+.errorText {
+  color: #e74c3c;
+  font-size: 0.75rem;    /* smaller font */
+  margin-top: 0.1rem;   /* smaller margin */
+}
+
+.button {
+  margin-top: 1rem;      /* reduced margin */
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover:not(:disabled) {
+  background: #4338ca;
+}
+
+.buttonDisabled {
+  background: #aab4f9;
+  cursor: not-allowed;
+}
+
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2ecc71;
+  color: white;
+  padding: 0.6rem 1rem;   /* slightly smaller padding */
+  border-radius: 6px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  animation: fadeInOut 3s ease-in-out;
+  z-index: 9999;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; bottom: 1rem; }
+  10%, 90% { opacity: 1; bottom: 1.5rem; }
+}

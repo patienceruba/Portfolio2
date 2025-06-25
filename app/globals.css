@@ -1,0 +1,29 @@
+.animated-bg {
+  background: linear-gradient(270deg, #6a11cb, #2575fc, #6a11cb);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh; /* full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 12px; /* optional */
+  box-sizing: border-box;
+  color: white;
+  /* You can add shadow or other effects here */
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+body {
+  padding-top: 60px; /* adjust according to navbar height */
+}

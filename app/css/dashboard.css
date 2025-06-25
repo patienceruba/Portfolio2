@@ -1,0 +1,276 @@
+/* CSS Variables */
+:root {
+  --color-bg: #f5f7fa;
+  --color-sidebar-bg: #111827;
+  --color-primary: #4f46e5;
+  --color-text-light: #e5e7eb;
+  --color-text-dark: #111827;
+  --color-text-muted: #444;
+  --color-text-alt: #333;
+  --color-hover-bg: #1f2937;
+  --color-shadow: rgba(0, 0, 0, 0.06);
+  --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
+
+/* Base Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+  background-color: var(--color-bg);
+  color: var(--color-text-dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make space below fixed navbar (assuming navbar height ~64px) */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--color-text-dark);
+  padding-top: 64px; /* space for fixed navbar */
+}
+
+.sidebar {
+  background-color: var(--color-sidebar-bg);
+  color: var(--color-text-light);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+  /* smooth scrollbar for modern browsers */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.2) transparent;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 4px;
+}
+
+.sidebar-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.sidebar nav {
+  width: 100%;
+}
+
+.sidebar nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.sidebar nav ul li {
+  width: 100%;
+}
+
+.sidebar nav ul li a,
+.sidebar nav ul li button {
+  display: block;
+  width: 100%;
+  color: var(--color-text-light);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li button:hover,
+.sidebar nav ul li a:focus,
+.sidebar nav ul li button:focus {
+  background-color: var(--color-hover-bg);
+  color: var(--color-text-light);
+  outline-offset: 2px;
+  outline-color: var(--color-primary);
+  outline-style: solid;
+  outline-width: 2px;
+  outline-radius: 6px;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 1rem;
+  background-color: var(--color-bg);
+  padding-top: 0; /* Removed because .dashboard-container has padding-top */
+}
+
+/* Header styles */
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  margin: 0 0 0.3rem;
+  color: var(--color-text-dark);
+  font-weight: 700;
+}
+
+/* Stats cards */
+.stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px var(--color-shadow);
+  text-align: center;
+  color: var(--color-text-muted);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.stat-card:hover,
+.stat-card:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);
+  color: var(--color-primary);
+}
+
+.stat-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.stat-card p {
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Recent tasks/messages section */
+.recent-tasks {
+  background: #fff;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  color: var(--color-text-alt);
+}
+
+.recent-tasks h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.recent-tasks ul {
+  list-style: disc inside;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.recent-tasks ul li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: var(--color-text-muted);
+}
+
+/* Email links styling */
+.email {
+  color: var(--color-text-dark);
+  text-decoration: underline;
+  transition: color var(--transition-speed);
+}
+
+.email:hover,
+.email:focus {
+  color: var(--color-primary);
+  outline-offset: 2px;
+  outline-color: var(--color-primary);
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+/* Tablet & Up */
+@media (min-width: 600px) {
+  .dashboard-container {
+    flex-direction: row;
+    padding-top: 64px; /* Maintain space for fixed navbar */
+  }
+
+  /* Make sidebar fixed on tablet and desktop */
+  .sidebar {
+    width: 240px;
+    height: calc(100vh - 64px); /* Full height minus navbar */
+    position: fixed;
+    top: 64px;
+    left: 0;
+    padding: 2rem 1.5rem;
+  }
+
+  /* Main content margin to avoid sidebar overlap */
+  .main-content {
+    margin-left: 240px;
+    padding: 2rem;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .stats {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    padding: 1.25rem;
+  }
+
+  .recent-tasks h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .sidebar {
+    width: 260px;
+    height: calc(100vh - 64px);
+  }
+
+  .main-content {
+    margin-left: 260px;
+    padding: 3rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+}

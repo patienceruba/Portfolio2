@@ -1,0 +1,78 @@
+/* css/navbar.css */
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  /*background: rgb(255, 255, 255);  Add background so content doesn't show through */
+  z-index: 1000; /* Ensure navbar is on top */
+  box-sizing: border-box;
+  /* border:1px solid black; */
+  margin-top: 5px;
+}
+
+/* Prevent page content from being hidden under fixed navbar */
+body {
+  padding-top: 64px; /* Adjust this if navbar height changes */
+}
+
+.logo a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: black;
+  padding: 0 10px;
+}
+
+/* Responsive: For screens <= 768px */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-item {
+    padding: 10px 0;
+    text-align: right;
+    width: 100%;
+  }
+}

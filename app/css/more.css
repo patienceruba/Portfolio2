@@ -1,0 +1,120 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* Container styling */
+.more-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #ddd6d6;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Page heading */
+.more-heading {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
+
+/* Status text */
+.status-text {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #007700;
+}
+
+/* Posts list container */
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+/* Individual post card */
+.post-card {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto; /* Center the card */
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background-color: #fafafa;
+  transition: all 0.2s ease-in-out;
+}
+
+.post-card:hover {
+  background-color: #f0f8ff;
+  transform: scale(1.01);
+}
+
+/* Post title */
+.post-title {
+  font-size: 1.4rem;
+  color: #1a2027;
+  margin-bottom: 10px;
+}
+
+/* Post description */
+.post-description {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .more-container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .more-heading {
+    font-size: 2rem;
+  }
+
+  .post-title {
+    font-size: 1.2rem;
+  }
+
+  .post-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .more-container {
+    padding: 16px;
+    margin: 16px;
+  }
+
+  .more-heading {
+    font-size: 1.6rem;
+  }
+
+  .post-card {
+    padding: 16px;
+  }
+
+  .post-title {
+    font-size: 1rem;
+  }
+
+  .post-description {
+    font-size: 0.9rem;
+  }
+}
