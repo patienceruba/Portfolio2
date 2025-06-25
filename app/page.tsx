@@ -92,7 +92,7 @@ export default function Home() {
     }
     fetchCards();
   }, []);
-
+  console.log(status)
   return (
     <>
       <Navbar />
