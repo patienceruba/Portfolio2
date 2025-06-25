@@ -22,7 +22,7 @@ const imgs = [
   "/images/uriel-soberanes-MxVkWPiJALs-unsplash.jpg",
 ];
 
-const stacks = ["React", "Node.js", "Next.js", "MySQL", "Tailwind CSS", "JavaScript", "Python", "Django"];
+//const stacks = ["React", "Node.js", "Next.js", "MySQL", "Tailwind CSS", "JavaScript", "Python", "Django"];
 
 export default function CircularCarousel() {
   const [centerIndex, setCenterIndex] = useState(2);
